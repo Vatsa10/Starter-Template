@@ -70,7 +70,7 @@ const VideoComponent = () => {
                 {useFallback ? (
                   <img 
                     src="/images/hero-fallback.jpg" 
-                    alt="Vorbit AI Platform"
+                    alt="AxalionXAI AI Platform"
                     className="w-full h-full object-cover rounded-xl"
                     loading="eager"
                   />

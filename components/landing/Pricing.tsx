@@ -28,52 +28,52 @@ interface PricingTableProps {
 
 const defaultTiers: PricingTier[] = [
   {
-    id: "free",
-    name: "Free",
+    id: "early-bird",
+    name: "Early Bird",
     price: 0,
-    period: "month",
-    description: "Great for trying out Finament and for tiny remote teams",
-    buttonText: "Start for Free",
+    period: "launch",
+    description: "Exclusive access for our first users with special benefits",
+    buttonText: "Join Waitlist",
     buttonVariant: "outline",
+    isPopular: true,
     features: [
-      { name: "Account Aggregation", included: true },
-      { name: "Expense Tracking", included: true },
-      { name: "Budgeting Tools", included: true },
-      { name: "Transaction Insights", included: true },
-      { name: "Basic Security", included: true },
+      { name: "Early access to beta features", included: true },
+      { name: "Priority support", included: true },
+      { name: "Exclusive onboarding", included: true },
+      { name: "Influence product roadmap", included: true },
+      { name: "Special founding member badge", included: true },
     ],
   },
   {
-    id: "professional",
-    name: "Professional",
-    price: 98,
-    period: "month",
-    description: "Best for growing startups and growth companies",
-    buttonText: "Sign Up with Professional",
+    id: "founders-club",
+    name: "Founders Club",
+    price: 0,
+    period: "launch",
+    description: "For visionaries who want to shape the future of AI",
+    buttonText: "Apply Now",
     buttonVariant: "primary",
-    isPopular: true,
     features: [
-      { name: "Everything in Free", included: true },
-      { name: "Customizable Dashboards", included: true },
-      { name: "Advanced Budgeting", included: true },
-      { name: "Investment Tracking", included: true },
-      { name: "Enhanced Security", included: true },
+      { name: "All Early Bird benefits", included: true },
+      { name: "Direct line to our engineering team", included: true },
+      { name: "Quarterly strategy calls", included: true },
+      { name: "Early feature previews", included: true },
+      { name: "Founding member certificate", included: true },
     ],
   },
   {
     id: "enterprise",
     name: "Enterprise",
-    price: 160,
-    period: "month",
-    description: "Best for growing startups and growth companies",
-    buttonText: "Sign Up with Enterprise",
+    price: 0,
+    period: "custom",
+    description: "Custom AI solutions for your business needs",
+    buttonText: "Contact Sales",
     buttonVariant: "secondary",
     features: [
-      { name: "Financial Planning Tools", included: true },
-      { name: "Priority Support", included: true },
-      { name: "Premium Widgets", included: true },
-      { name: "Advanced Security", included: true },
-      { name: "Integration with 3rd-Party Services", included: true },
+      { name: "Custom AI model training", included: true },
+      { name: "Dedicated support team", included: true },
+      { name: "SLA & enterprise security", included: true },
+      { name: "Custom integrations", included: true },
+      { name: "Tailored pricing", included: true },
     ],
   },
 ];
@@ -94,9 +94,9 @@ const PricingTable: React.FC<PricingTableProps> = ({
       <div className="max-w-[1366px] w-full px-4 md:px-6 lg:px-15 mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold mb-4 text-center">Choose Your Plan</h1>
-          <p className="text-base sm:text-lg text-gray-600 ">
-            Select the perfect plan for your financial management needs
+          <h1 className="text-4xl font-bold mb-4 text-center">Be Among the First</h1>
+          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
+            Join our exclusive launch program and help shape the future of AI. Pricing will be announced soon.
           </p>
         </div>
 
@@ -120,10 +120,10 @@ const PricingTable: React.FC<PricingTableProps> = ({
                   <h3 className="text-2xl font-bold mb-2">{tier.name}</h3>
                   <div className="mb-4">
                     <span className="text-4xl font-bold">
-                      {formatPrice(tier.price)}
+                      {tier.price === 0 ? 'Free' : 'Custom'}
                     </span>
                     <span className="text-sm text-gray-500 dark:text-gray-400">
-                      /{tier.period}
+                      {tier.price === 0 ? ' at launch' : ' pricing'}
                     </span>
                   </div>
                   <p className="text-sm text-gray-600 dark:text-gray-300">

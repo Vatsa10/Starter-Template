@@ -86,7 +86,7 @@ Building the Next Generation of
             className="text-base sm:text-lg text-gray-600 py-7 max-w-2xl mx-auto"
             variants={fadeInUpVariants}
           >
-            Vorbit is pioneering the next wave of AI with our advanced Agentic AI platform.
+            AxalionXAI is pioneering the next wave of AI with our advanced Agentic AI platform.
             Experience intelligent systems that think, learn, and act autonomously to solve complex problems.
           </motion.p>
         </div>
