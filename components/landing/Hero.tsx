@@ -52,7 +52,7 @@ export default function Hero() {
         <div className="max-w-[900px]">
           {/* Hero Button - Animated entry */}
           <motion.div variants={fadeInUpVariants}>
-            <HeroButton name="Get started with your SaaS in minutes" />
+            <HeroButton name="The Future of AI is Agentic - Launching Soon" />
           </motion.div>
 
           {/* Main Heading - Staggered word animation */}
@@ -67,27 +67,27 @@ export default function Hero() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                Get Started with Your Side
+Building the Next Generation of
               </motion.span>
               <br />
               <motion.span
-                className="opacity-40"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 0.4, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
               >
-                Project in Minutes
+                Autonomous AI Agents
               </motion.span>
             </motion.p>
           </motion.div>
 
           {/* Description - Fade in with slight delay */}
           <motion.p
-            className="text-base sm:text-lg text-gray-600  py-7 "
+            className="text-base sm:text-lg text-gray-600 py-7 max-w-2xl mx-auto"
             variants={fadeInUpVariants}
           >
-            Start building instantly with pre-designed components perfect for
-            getting your ideas off the ground.
+            Vorbit is pioneering the next wave of AI with our advanced Agentic AI platform.
+            Experience intelligent systems that think, learn, and act autonomously to solve complex problems.
           </motion.p>
         </div>
 
@@ -95,16 +95,16 @@ export default function Hero() {
         <motion.div className="flex flex-row gap-6" variants={fadeInUpVariants}>
           <motion.div>
             <PrimaryButton
-              name="Try for free"
-              onClick={() => window.open("https://github.com/Vatsa10/Starter-Template", "_blank")}
+              name="Join Waitlist"
+              onClick={() => window.open("#waitlist", "_self")}
             />
           </motion.div>
 
           <motion.div>
             <PrimaryButton
               variant="secondary"
-              name="Login"
-              onClick={() => console.log("clicked")}
+              name="Learn More"
+              onClick={() => window.open("#features", "_self")}
             />
           </motion.div>
         </motion.div>
