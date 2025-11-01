@@ -26,6 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased font-sans`}
+        style={{ position: 'relative', minHeight: '100vh', overflowX: 'hidden' }}
       >
         {/* <ThemeProvider
           attribute="class"
@@ -34,9 +35,11 @@ export default function RootLayout({
           forcedTheme="light" // This will force dark mode
         > */}
         <ViewTransitions>
-          <ReactLenis root>
-            {children}
-               <Analytics />
+          <ReactLenis root options={{ lerp: 0.1, duration: 1.5, smoothWheel: true }}>
+            <div style={{ position: 'relative', minHeight: '100vh' }}>
+              {children}
+              <Analytics />
+            </div>
           </ReactLenis>
         </ViewTransitions>
         {/* </ThemeProvider> */}

@@ -14,13 +14,14 @@ import {
 export default function Hero() {
 
   return (
-    <div className=" w-full relative bg-white overflow-hidden">
+    <div className="w-full relative bg-white overflow-hidden" style={{ position: 'relative' }}>
       {/* Animated Subtle Diagonal Fade Grid Background */}
       <motion.div
-        className="absolute inset-0 "
+        className="absolute inset-0"
         variants={gridVariants}
         initial="hidden"
         animate="visible"
+        aria-hidden="true"
         style={{
           backgroundImage: `
             linear-gradient(to right, rgba(209, 213, 219, 0.2) 1px, transparent 1px),
@@ -31,6 +32,7 @@ export default function Hero() {
             "radial-gradient(ellipse 100% 100% at 0% 0%, #000 40%, transparent 80%)",
           maskImage:
             "radial-gradient(ellipse 100% 100% at 0% 0%, #000 40%, transparent 80%)",
+          position: 'absolute',
         }}
       />
 
@@ -52,7 +54,7 @@ export default function Hero() {
         <div className="max-w-[900px]">
           {/* Hero Button - Animated entry */}
           <motion.div variants={fadeInUpVariants}>
-            <HeroButton name="The Future of AI is Agentic - Launching Soon" />
+            <HeroButton name="The Future is Autonomous" />
           </motion.div>
 
           {/* Main Heading - Staggered word animation */}

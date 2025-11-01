@@ -32,9 +32,12 @@ const PrimaryButton = ({ name, onClick, variant = "primary" }: ButtonProps) => {
   );
 };
 
-const StyledWrapper = styled.div<{
+const StyledWrapper = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'variant',
+})<{
   variant: "primary" | "secondary" | "navbar";
 }>`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -53,6 +56,7 @@ const StyledWrapper = styled.div<{
     border-radius: 0.5em;
     border: 0;
      position: relative;
+    overflow: visible;
     z-index: 1;
     width: 100%;
 

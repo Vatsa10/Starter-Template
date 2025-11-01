@@ -51,8 +51,8 @@ interface MobileNavMenuProps {
 export const Navbar = ({ children, className }: NavbarProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollY } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
+    // Using window scroll by default
+    offset: ["start start", "end start"]
   });
   const [visible, setVisible] = useState<boolean>(false);
 
@@ -67,11 +67,20 @@ export const Navbar = ({ children, className }: NavbarProps) => {
   return (
     <motion.div
       ref={ref}
-      // IMPORTANT: Change this to class of `fixed` if you want the navbar to be fixed
       className={cn(
-        "fixed inset-x-0 top-2 z-50 w-full  max-w-[1366px] mx-auto px-4 sm:px-13",
+        "fixed inset-x-0 top-2 z-50 w-full max-w-[1366px] mx-auto px-4 sm:px-13",
         className
       )}
+      style={{
+        position: 'fixed',
+        top: '0.5rem',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '100%',
+        maxWidth: '1366px',
+        padding: '0 1rem',
+        zIndex: 50,
+      }}
     >
       {React.Children.map(children, (child) =>
         React.isValidElement(child)
