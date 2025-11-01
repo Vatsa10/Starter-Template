@@ -10,7 +10,7 @@ export interface PageMeta {
 
 // Base site configuration
 export const siteConfig = {
-  name: "SideKick",
+  name: "Vorbit",
   title: 'Side Project Template',
   description: 'Side Project Template that lets you start your side project in mins.',
   url: process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000',
